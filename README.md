@@ -1,5 +1,5 @@
 # java_concurrency
 
 ```
-It's important to stay low profile... ^_^
+It's important to keep a low profile... ^_^
 ```
