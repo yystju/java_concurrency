@@ -125,9 +125,9 @@ public class CacheTests {
         String value2 = "WORLD2";
         data.put(key2, value2);
 
-        long verbose = 10;
+        long verbose = 0;
 
-        int N = 2, T = 2;
+        int N = 10, T = 5;
         CountDownLatch latch = new CountDownLatch(N * 2);
 
         Thread key1Thread = new Thread(() -> {
