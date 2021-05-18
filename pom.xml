@@ -32,6 +32,44 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>com.googlecode.cmake-maven-project</groupId>
+				<artifactId>cmake-maven-plugin</artifactId>
+				<version>3.19.2-b1</version>
+				<executions>
+					<execution>
+						<id>cmake-generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<sourcePath>${basedir}/src/main/cpp</sourcePath>
+							<targetPath>${basedir}/target/cpp</targetPath>
+							<generator>Unix Makefiles</generator>
+							<environmentVariables>
+								<key>value</key>
+							</environmentVariables>
+							<options>
+								<option>-DCMAKE_BUILD_TYPE=Release</option>
+							</options>
+						</configuration>
+					</execution>
+					<execution>
+						<id>cmake-compile</id>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<config>x64|Release</config>
+							<target></target>
+							<projectDirectory>${basedir}/target/cpp</projectDirectory>
+							<environmentVariables>
+								<key>value</key>
+							</environmentVariables>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>

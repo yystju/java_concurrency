@@ -28,7 +28,6 @@ public class Queue<T> {
     public void push(T t) throws InterruptedException {
         try {
             lock.lock();
-
             while(data.size() >= size) {
                 conditionFull.await(checkInterval, TimeUnit.MILLISECONDS);
             }
